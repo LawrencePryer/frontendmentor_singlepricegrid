@@ -1,0 +1,179 @@
+/* ----- VARIABLES ----- */
+
+:root {
+  --primary-color: hsl(179, 62%, 43%);
+  --secondary-color: hsl(71, 73%, 54%);
+  --dark-text-color: hsl(218, 22%, 67%);
+  --background-color: hsl(204, 43%, 93%);
+}
+
+/* ----- RESET ----- */
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ----- UTILITY CLASSES ----- */
+.container {
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  background-color: var(--secondary-color);
+  padding: 7px 70px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  background-color: rgba(192, 223, 52, 0.85);
+}
+
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.price-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.centre-text {
+  display: flex;
+  align-items: center;
+}
+
+/* ----- GENERAL STYLING ----- */
+body {
+  background-color: var(--background-color);
+  font-family: 'Karla', sans-serif;
+  line-height: 1.7;
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+/* ----- CARD STYLING ----- */
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  max-width: 680px;
+  min-width: 680px;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+.card__top-row {
+  height: 46%;
+  padding: 30px 50px;
+  color: var(--dark-text-color);
+}
+
+.card__top-row h4 {
+  color: var(--secondary-color);
+}
+
+.card__bottom-row {
+  display: flex;
+  height: 54%;
+  color: #fff;
+}
+
+.card__bottom-row--subscription {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  padding: 35px 40px;
+  border-bottom-left-radius: 7px;
+}
+
+.card__bottom-row--subscription .btn {
+  margin-top: auto;
+}
+
+.card__bottom-row--why-us {
+  background-color: var(--primary-color);
+  opacity: 0.7;
+  flex-basis: 50%;
+  padding: 35px 40px;
+  border-bottom-right-radius: 7px;
+}
+
+.card__bottom-row--why-us ul li {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+@media only screen and (max-width: 720px) {
+  .card {
+    position: static;
+    min-width: 85%;
+    height: auto;
+    top: auto;
+    left: auto;
+    transform: translate(0%, -0%);
+    font-size: 14px;
+    margin: 20px;
+  }
+
+  .card__bottom-row {
+    flex-direction: column;
+  }
+
+  .card__bottom-row--subscription {
+    border-bottom-left-radius: 0;
+  }
+
+  .card__bottom-row--subscription .btn {
+    margin-top: 20px;
+  }
+
+  .card__bottom-row--why-us {
+    border-bottom-left-radius: 7px;
+  }
+
+  .card__top-row,
+  .card__bottom-row--subscription,
+  .card__bottom-row--why-us {
+    padding: 30px;
+  }
+}
